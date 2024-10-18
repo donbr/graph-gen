@@ -1,11 +1,24 @@
 import networkx as nx
 
 class RAGGraph:
+    """
+    Class to define and create a retrieval-augmented generation (RAG) knowledge graph.
+    """
+
     @staticmethod
     def create_graph():
+        """
+        Create and return the knowledge graph representing relationships in the RAG model.
+
+        Nodes include language models, biomedical domains, and performance metrics.
+        Edges define relationships such as 'uses', 'includes', and 'focuses on'.
+
+        Returns:
+            networkx.DiGraph: A directed knowledge graph with defined nodes and edges.
+        """
         G = nx.DiGraph()
 
-        # Adding nodes for key ontology classes
+        # Define nodes with shape and color attributes
         nodes = {
             "Study Objective": ("ellipse", "lightblue"),
             "LLMs": ("box", "lightgreen"),
@@ -27,7 +40,7 @@ class RAGGraph:
         for node, (shape, color) in nodes.items():
             G.add_node(node, shape=shape, color=color)
 
-        # Adding edges to represent relationships
+        # Define edges between nodes with labels
         edges = [
             ("Study Objective", "LLMs", "uses"),
             ("LLMs", "GPT-3.5", "includes"),
