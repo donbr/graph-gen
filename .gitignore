@@ -1,3 +1,6 @@
 .venv/
 __pycache__/
 .python-version
+knowledge_graph_.*
+knowledge_graph_20241018_083705.gml
+knowledge_graph_20241018_083705.png
